@@ -3,19 +3,20 @@
 " =========================================================
 "
 " Dark color scheme with black background.
-" Colors used in the GUI: Coral, Chocolate, Goldenrod, LimeGreen, RoyalBlue,
-" SlateGray, Khaki, and even DeepPink.
+" Some of the colors used in GUI: Coral, Violet, LimeGreen, light RoyalBlue,
+" DeepPink.
 "
-" Version: 0.5 (2012-06-16)
+" Version: 0.6 (2012-06-17)
 " Author:  Alexey Muranov <muranov@math.univ-toulouse.fr>
 
-set background=dark
 highlight clear
+set background=dark
 if exists("syntax_on")
   syntax reset
 endif
 
 let g:colors_name = "oh-là-là"
+" let g:colors_name = "oh-la-vache"
 
 " Basic
 highlight Normal       guifg=Khaki guibg=Black
@@ -28,9 +29,9 @@ highlight! link lCursor       Cursor
 
 " Search
 highlight Search       guifg=NONE guibg=DarkSlateGray gui=underline
-highlight Search       ctermfg=NONE ctermbg=DarkGray cterm=underline
+highlight Search       ctermfg=NONE ctermbg=DarkGray cterm=underline term=standout
 highlight IncSearch    guifg=Yellow guibg=Black gui=reverse
-highlight IncSearch    ctermfg=Yellow ctermbg=Black cterm=reverse
+highlight IncSearch    ctermfg=Yellow ctermbg=Black cterm=reverse term=reverse
 highlight MatchParen   guifg=NONE guibg=NONE gui=reverse
 highlight MatchParen   ctermfg=NONE ctermbg=NONE cterm=reverse term=reverse
 
@@ -43,8 +44,8 @@ highlight ColorColumn  guibg=Gray10
 highlight ColorColumn  ctermbg=DarkGray
 highlight LineNr       guifg=SlateGray
 highlight LineNr       ctermfg=DarkGray
-highlight FoldColumn   guifg=Green guibg=Gray20
-highlight FoldColumn   ctermfg=Green ctermbg=DarkGray
+highlight FoldColumn   guifg=Green guibg=Gray20 gui=bold
+highlight FoldColumn   ctermfg=Green ctermbg=DarkGray cterm=bold
 " Use the same FG color as the BG color for the cursor,
 " and same BG color as NonText:
 highlight SignColumn   guifg=Yellow guibg=Gray20 gui=bold
@@ -66,28 +67,35 @@ highlight Visual       ctermbg=Black ctermfg=LightGreen cterm=reverse
 " highlight User1 ctermbg=DarkGray guibg=Gray25
 
 " Specials
+highlight Special      guifg=Coral gui=NONE
+highlight Special      ctermfg=Red cterm=NONE
+" highlight! link SpecialKey    Special
+highlight SpecialKey   guifg=Cyan gui=NONE
+highlight SpecialKey   ctermfg=Cyan cterm=NONE
 highlight Todo         guifg=Firebrick guibg=Green gui=bold
 highlight Todo         ctermfg=DarkRed ctermbg=Green cterm=bold
-highlight Title        guifg=Snow gui=bold
-highlight Title        ctermfg=White cterm=bold
 
 " Syntax
-highlight Constant     guifg=Chocolate
-highlight Constant     ctermfg=Brown
+highlight Title        guifg=Snow gui=bold
+highlight Title        ctermfg=White cterm=bold
+" highlight Constant     guifg=Chocolate
+" highlight Constant     ctermfg=Brown
+highlight Constant     guifg=Violet
+highlight Constant     ctermfg=Magenta
 highlight String       guifg=Goldenrod
 highlight String       ctermfg=Brown
 highlight! link Character    String
 highlight Number       guifg=Turquoise
 highlight Number       ctermfg=Cyan
-highlight Boolean      guifg=Firebrick
-highlight Boolean      ctermfg=DarkRed
+highlight Boolean      guifg=Chocolate
+highlight Boolean      ctermfg=Brown
 highlight Statement    guifg=Orange gui=bold
 highlight Statement    ctermfg=Yellow cterm=bold
 highlight Identifier   guifg=LimeGreen
 highlight Identifier   ctermfg=Green
 highlight Function     guifg=DeepSkyBlue gui=NONE
 highlight Function     ctermfg=Cyan cterm=NONE
-highlight PreProc      guifg=Firebrick gui=bold
+highlight PreProc      guifg=Tomato gui=bold
 highlight PreProc      ctermfg=DarkRed cterm=bold
 highlight Define       guifg=DeepPink gui=bold
 highlight Define       ctermfg=Magenta cterm=bold
@@ -95,9 +103,6 @@ highlight Comment      guifg=DarkGray gui=italic
 highlight Comment      ctermfg=DarkGray cterm=NONE
 highlight Type         guifg=RoyalBlue1 gui=bold
 highlight Type         ctermfg=Blue cterm=bold
-highlight Special      guifg=Coral gui=NONE
-highlight Special      ctermfg=Red cterm=NONE
-highlight! link SpecialKey    Special
 highlight Error        guifg=White guibg=Red
 highlight Error        ctermfg=White ctermbg=Red
 
