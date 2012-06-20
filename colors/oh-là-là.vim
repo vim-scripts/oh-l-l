@@ -1,16 +1,25 @@
+" Vim color scheme
 "
-" Oh-là-là Vim Color Scheme (alternative name: Oh-la-vache)
-" =========================================================
+" Oh-là-là (Oh-la-vache) Vim Color Scheme
+" =======================================
 "
-" Dark color scheme with black background.
-" Some of the colors used in GUI: Coral, Violet, LimeGreen, light RoyalBlue,
-" DeepPink.
+" High contrast dark color scheme with black background.
 "
-" Version: 0.6 (2012-06-17)
+" Some of the colors used in GUI: LimeGreen, light RoyalBlue, Coral, Tomato,
+" and even DeepPink.
+"
+" Name:    oh-là-là (oh-la-vache)
+" Version: 0.9.1 (2012-06-20)
 " Author:  Alexey Muranov <muranov@math.univ-toulouse.fr>
 
-highlight clear
+" This version notes
+" ------------------
+" 1. Minor color "fixes"
+
+hi clear
+
 set background=dark
+
 if exists("syntax_on")
   syntax reset
 endif
@@ -19,119 +28,139 @@ let g:colors_name = "oh-là-là"
 " let g:colors_name = "oh-la-vache"
 
 " Basic
-highlight Normal       guifg=Khaki guibg=Black
-highlight Normal       ctermfg=Gray ctermbg=Black
-highlight NonText      guifg=SlateGray guibg=Gray20 gui=NONE
-highlight NonText      ctermfg=Gray ctermbg=DarkGray
-highlight Cursor       guibg=Yellow guifg=Black
-highlight Cursor       ctermbg=Yellow ctermfg=Black
-highlight! link lCursor       Cursor
+hi Normal       guifg=Beige         guibg=Black
+hi Normal       ctermfg=LightGray   ctermbg=Black
+hi NonText      guifg=SlateGray     guibg=Gray20        gui=NONE
+hi NonText      ctermfg=Gray        ctermbg=DarkGray
+hi Cursor       guifg=Black         guibg=Yellow
+hi Cursor       ctermfg=Black       ctermbg=Yellow
+hi! link lCursor Cursor
 
 " Search
-highlight Search       guifg=NONE guibg=DarkSlateGray gui=underline
-highlight Search       ctermfg=NONE ctermbg=DarkGray cterm=underline term=standout
-highlight IncSearch    guifg=Yellow guibg=Black gui=reverse
-highlight IncSearch    ctermfg=Yellow ctermbg=Black cterm=reverse term=reverse
-highlight MatchParen   guifg=NONE guibg=NONE gui=reverse
-highlight MatchParen   ctermfg=NONE ctermbg=NONE cterm=reverse term=reverse
+hi Search       guifg=NONE          guibg=DarkSlateGray gui=underline
+hi Search       ctermfg=NONE        ctermbg=DarkGray    cterm=underline     term=standout
+hi IncSearch    guifg=Yellow        guibg=Black         gui=reverse
+hi IncSearch    ctermfg=Yellow      ctermbg=Black       cterm=reverse       term=reverse
+hi MatchParen   guifg=NONE          guibg=NONE          gui=reverse
+hi MatchParen   ctermfg=NONE        ctermbg=NONE        cterm=reverse       term=reverse
 
 " Window Elements
-highlight StatusLine   guifg=Green guibg=Black gui=reverse,bold
-highlight StatusLine   ctermfg=Green ctermbg=Black cterm=reverse,bold
-highlight StatusLineNC guifg=SlateGray guibg=Black gui=reverse,bold
-highlight StatusLineNC ctermfg=Gray ctermbg=Black cterm=reverse,bold
-highlight ColorColumn  guibg=Gray10
-highlight ColorColumn  ctermbg=DarkGray
-highlight LineNr       guifg=SlateGray
-highlight LineNr       ctermfg=DarkGray
-highlight FoldColumn   guifg=Green guibg=Gray20 gui=bold
-highlight FoldColumn   ctermfg=Green ctermbg=DarkGray cterm=bold
-" Use the same FG color as the BG color for the cursor,
-" and same BG color as NonText:
-highlight SignColumn   guifg=Yellow guibg=Gray20 gui=bold
-highlight SignColumn   ctermfg=Yellow ctermbg=DarkGray cterm=bold term=reverse
-" Use the same FG color as the BG color for the cursor:
-highlight CursorLineNr guifg=Yellow gui=bold
-highlight CursorLineNr ctermfg=Yellow cterm=bold
-highlight CursorLine   guibg=Gray5 gui=NONE
-highlight CursorLine   ctermbg=NONE cterm=NONE
-highlight CursorColumn guibg=Gray5 gui=NONE
-highlight CursorColumn ctermbg=NONE cterm=NONE
-highlight! link VertSplit     StatusLineNC
-highlight Folded       guifg=Green guibg=DarkSlateGray
-highlight Folded       ctermfg=Green ctermbg=DarkGray
-highlight Visual       guibg=Black guifg=LightGreen gui=reverse
-highlight Visual       ctermbg=Black ctermfg=LightGreen cterm=reverse
+hi StatusLine   guifg=Green         guibg=Black         gui=reverse,bold
+hi StatusLine   ctermfg=Green       ctermbg=Black       cterm=reverse,bold
+hi StatusLineNC guifg=SlateGray     guibg=Black         gui=reverse,bold
+hi StatusLineNC ctermfg=Gray        ctermbg=Black       cterm=reverse,bold
+hi ColorColumn                      guibg=Gray10
+hi ColorColumn                      ctermbg=DarkGray
+hi LineNr       guifg=SlateGray
+hi LineNr       ctermfg=DarkGray
+hi FoldColumn   guifg=Green         guibg=Gray20        gui=bold
+hi FoldColumn   ctermfg=Green       ctermbg=DarkGray    cterm=bold
+" SignColumn uses the same FG color as the BG color for Cursor, and same BG color as NonText
+hi SignColumn   guifg=Yellow        guibg=Gray20        gui=bold
+hi SignColumn   ctermfg=Yellow      ctermbg=DarkGray    cterm=bold          term=reverse
+" CursorLineNr uses the same FG color as the BG color for Cursor
+hi CursorLineNr guifg=Yellow                            gui=bold
+hi CursorLineNr ctermfg=Yellow                          cterm=bold
+hi CursorLine                       guibg=Gray5         gui=NONE
+hi CursorLine                       ctermbg=NONE        cterm=NONE
+hi CursorColumn                     guibg=Gray5         gui=NONE
+hi CursorColumn                     ctermbg=NONE        cterm=NONE
+hi! link VertSplit StatusLineNC
+hi Folded       guifg=Green         guibg=DarkSlateGray
+hi Folded       ctermfg=Green       ctermbg=DarkGray
+hi Visual       guibg=Black         guifg=LightGreen    gui=reverse
+hi Visual       ctermbg=Black       ctermfg=LightGreen  cterm=reverse
 
-" Status line and the ruler
-" highlight User1 ctermbg=DarkGray guibg=Gray25
+" The ruler
+" hi User1 guibg=Black ctermbg=Black
 
 " Specials
-highlight Special      guifg=Coral gui=NONE
-highlight Special      ctermfg=Red cterm=NONE
-" highlight! link SpecialKey    Special
-highlight SpecialKey   guifg=Cyan gui=NONE
-highlight SpecialKey   ctermfg=Cyan cterm=NONE
-highlight Todo         guifg=Firebrick guibg=Green gui=bold
-highlight Todo         ctermfg=DarkRed ctermbg=Green cterm=bold
+hi Special      guifg=Coral                             gui=NONE
+hi Special      ctermfg=Red                             cterm=NONE
+hi SpecialKey   guifg=Cyan                              gui=NONE
+hi SpecialKey   ctermfg=Cyan                            cterm=NONE
+hi Todo         guifg=Firebrick     guibg=Green         gui=bold
+hi Todo         ctermfg=DarkRed     ctermbg=Green       cterm=bold
 
 " Syntax
-highlight Title        guifg=Snow gui=bold
-highlight Title        ctermfg=White cterm=bold
-" highlight Constant     guifg=Chocolate
-" highlight Constant     ctermfg=Brown
-highlight Constant     guifg=Violet
-highlight Constant     ctermfg=Magenta
-highlight String       guifg=Goldenrod
-highlight String       ctermfg=Brown
-highlight! link Character    String
-highlight Number       guifg=Turquoise
-highlight Number       ctermfg=Cyan
-highlight Boolean      guifg=Chocolate
-highlight Boolean      ctermfg=Brown
-highlight Statement    guifg=Orange gui=bold
-highlight Statement    ctermfg=Yellow cterm=bold
-highlight Identifier   guifg=LimeGreen
-highlight Identifier   ctermfg=Green
-highlight Function     guifg=DeepSkyBlue gui=NONE
-highlight Function     ctermfg=Cyan cterm=NONE
-highlight PreProc      guifg=Tomato gui=bold
-highlight PreProc      ctermfg=DarkRed cterm=bold
-highlight Define       guifg=DeepPink gui=bold
-highlight Define       ctermfg=Magenta cterm=bold
-highlight Comment      guifg=DarkGray gui=italic
-highlight Comment      ctermfg=DarkGray cterm=NONE
-highlight Type         guifg=RoyalBlue1 gui=bold
-highlight Type         ctermfg=Blue cterm=bold
-highlight Error        guifg=White guibg=Red
-highlight Error        ctermfg=White ctermbg=Red
+hi Title        guifg=Snow                              gui=bold
+hi Title        ctermfg=White                           cterm=bold
+hi Constant     guifg=Orange
+hi Constant     ctermfg=Yellow
+hi String       guifg=LightGoldenrod
+hi String       ctermfg=Yellow
+hi! link Character String
+hi Number       guifg=Chocolate
+hi Number       ctermfg=Brown
+hi Boolean      guifg=Magenta
+hi Boolean      ctermfg=Magenta
+hi Statement    guifg=LimeGreen                         gui=bold
+hi Statement    ctermfg=Green                           cterm=bold
+hi Identifier   guifg=Chartreuse
+hi Identifier   ctermfg=LightGreen
+hi Function     guifg=DeepSkyBlue                       gui=NONE
+hi Function     ctermfg=Cyan                            cterm=NONE
+hi PreProc      guifg=Tomato                            gui=bold
+hi PreProc      ctermfg=Red                             cterm=bold
+hi Define       guifg=DeepPink                          gui=bold
+hi Define       ctermfg=Magenta                         cterm=bold
+hi Comment      guifg=DarkGray                          gui=italic
+hi Comment      ctermfg=DarkGray                        cterm=NONE
+hi Type         guifg=RoyalBlue1                        gui=bold
+hi Type         ctermfg=Blue                            cterm=bold
+hi Error        guifg=White                             guibg=Red
+hi Error        ctermfg=White                           ctermbg=Red
+
+" Spelling
+hi SpellBad                                             gui=undercurl       guisp=Red
+hi SpellBad                         ctermbg=DarkRed                         term=reverse
+hi SpellCap                                             gui=undercurl       guisp=Blue
+hi SpellCap                         ctermbg=DarkBlue                        term=reverse
+hi SpellRare                                            gui=undercurl       guisp=Magenta
+hi SpellRare                        ctermbg=DarkMagenta                     term=reverse
+hi SpellLocal                                           gui=undercurl       guisp=Green
+hi SpellLocal                       ctermbg=DarkGreen                       term=underline
 
 " File system browsing
-highlight Directory    guifg=Turquoise gui=bold
-highlight Directory    ctermfg=Cyan cterm=bold term=bold
+hi Directory    guifg=Turquoise                         gui=bold
+hi Directory    ctermfg=Cyan                            cterm=bold          term=bold
 
 " Diff
-highlight DiffAdd      guifg=fg guibg=Blue gui=NONE
-highlight DiffAdd      ctermfg=fg ctermbg=Blue cterm=NONE
-highlight DiffChange   guifg=fg guibg=DarkGray gui=NONE
-highlight DiffChange   ctermfg=fg ctermbg=DarkGray cterm=NONE
-highlight DiffDelete   guibg=bg guibg=NONE gui=NONE
-highlight DiffDelete   ctermfg=fg ctermbg=NONE cterm=NONE
-highlight DiffText     guifg=Black guibg=Yellow gui=NONE
-highlight DiffText     ctermfg=Black ctermbg=Yellow cterm=NONE
+hi DiffAdd      guifg=LightGray     guibg=DarkGreen     gui=NONE
+hi DiffAdd      ctermfg=LightGray   ctermbg=DarkGreen   cterm=NONE
+hi DiffChange   guifg=LightGray     guibg=DarkBlue      gui=NONE
+hi DiffChange   ctermfg=LightGray   ctermbg=DarkBlue    cterm=NONE
+hi DiffDelete   guifg=Gray          guibg=DarkRed       gui=NONE
+hi DiffDelete   ctermfg=Gray        ctermbg=DarkRed     cterm=NONE
+hi DiffText     guifg=LightGreen    guibg=DarkMagenta   gui=NONE
+hi DiffText     ctermfg=LightGreen  ctermbg=DarkMagenta cterm=NONE
 
 " Pop up menu
-highlight! link Pmenu         StatusLineNC
-highlight! link PmenuSel      StatusLine
-highlight! link PmenuSbar     NonText
-highlight! link PmenuThumb    Cursor
+hi! link Pmenu      StatusLineNC
+hi! link PmenuSel   StatusLine
+hi! link PmenuSbar  NonText
+hi! link PmenuThumb Cursor
+
+" WildMenu
+hi WildMenu     guifg=Green         guibg=Black         gui=underline
+hi WildMenu     ctermfg=Green       ctermbg=Black       cterm=underline     term=standout
+
+" Tabs
+" FIXME: untested
+" hi TabLine      gui=underline       guibg=DarkGrey
+" hi TabLine      ctermfg=White       ctermbg=DarkGrey    cterm=underline     term=underline
+" hi TabLineFill  gui=reverse
+" hi TabLineFill                                          cterm=reverse       term=reverse
+" hi TabLineSel   gui=bold
+" hi TabLineSel                                           cterm=bold          term=bold
 
 " Vim
-highlight! link vimHiAttrib    Constant
-highlight! link vimGroup       Type
-highlight! link vimHiKeyList   Normal
-highlight! link vimHiTerm      Identifier
+" hi! link vimHiAttrib     Constant
+" hi! link vimGroup        Type
+" hi! link vimHiKeyList    Normal
+" hi! link vimHiTerm       Identifier
+hi! link vimHiCTermColor vimHiGroup
 
 " Custom
-" highlight WhitespaceAtEOL ctermbg=DarkGreen guibg=DarkGreen
+" hi WhitespaceAtEOL ctermbg=DarkGreen guibg=DarkGreen
 " syntax match WhitespaceAtEOL /\s\+$/
