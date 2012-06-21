@@ -9,12 +9,12 @@
 " and even DeepPink.
 "
 " Name:    oh-là-là (oh-la-vache)
-" Version: 0.9.1 (2012-06-20)
+" Version: 0.9.2 (2012-06-21)
 " Author:  Alexey Muranov <muranov@math.univ-toulouse.fr>
 
 " This version notes
 " ------------------
-" 1. Minor color "fixes"
+" 1. Work on tabs (TabLine, etc.).
 
 hi clear
 
@@ -146,13 +146,12 @@ hi WildMenu     guifg=Green         guibg=Black         gui=underline
 hi WildMenu     ctermfg=Green       ctermbg=Black       cterm=underline     term=standout
 
 " Tabs
-" FIXME: untested
-" hi TabLine      gui=underline       guibg=DarkGrey
-" hi TabLine      ctermfg=White       ctermbg=DarkGrey    cterm=underline     term=underline
-" hi TabLineFill  gui=reverse
-" hi TabLineFill                                          cterm=reverse       term=reverse
-" hi TabLineSel   gui=bold
-" hi TabLineSel                                           cterm=bold          term=bold
+" TODO: work on this
+hi TabLine      guifg=LightSlateGray  guibg=Gray20      gui=underline
+hi TabLine      ctermfg=LightGray          ctermbg=DarkGray  cterm=underline     term=underline
+hi! link TabLineFill  NonText
+hi TabLineSel   guifg=White         guibg=Gray5         gui=bold
+hi TabLineSel   ctermfg=White       ctermbg=Black       cterm=bold
 
 " Vim
 " hi! link vimHiAttrib     Constant
