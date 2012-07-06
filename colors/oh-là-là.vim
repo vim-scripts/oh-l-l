@@ -9,12 +9,14 @@
 " and even DeepPink.
 "
 " Name:    oh-là-là (oh-la-vache)
-" Version: 0.9.2 (2012-06-21)
+" Version: 0.9.3 (2012-07-06)
 " Author:  Alexey Muranov <muranov@math.univ-toulouse.fr>
 
 " This version notes
 " ------------------
-" 1. Work on tabs (TabLine, etc.).
+" 1. Use reverse video for Search group.
+" 2. Use Gray15 instead of Gray10 and Gray10 instead of Gray5.
+" 3. Define custom guicursor.
 
 hi clear
 
@@ -24,23 +26,28 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name = "oh-là-là"
-" let g:colors_name = "oh-la-vache"
+let g:colors_name="oh-là-là"
+" let g:colors_name="oh-la-vache"
 
 " Basic
 hi Normal       guifg=Beige         guibg=Black
 hi Normal       ctermfg=LightGray   ctermbg=Black
 hi NonText      guifg=SlateGray     guibg=Gray20        gui=NONE
 hi NonText      ctermfg=Gray        ctermbg=DarkGray
+
+" Cursor
 hi Cursor       guifg=Black         guibg=Yellow
 hi Cursor       ctermfg=Black       ctermbg=Yellow
 hi! link lCursor Cursor
+hi! link iCursor Cursor
+
+set guicursor=n-c:block-Cursor/lCursor-blinkwait2000-blinkoff500-blinkon1500,v:block-Cursor/lCursor-blinkon0,ve:ver50-Cursor-blinkon0,o:hor50-Cursor-blinkwait500-blinkoff125-blinkon375,i-ci:ver33-iCursor/lCursor-blinkwait500-blinkoff125-blinkon375,r-cr:hor33-iCursor/lCursor-blinkwait500-blinkoff125-blinkon375,sm:block-Cursor-blinkwait250-blinkoff125-blinkon125
 
 " Search
-hi Search       guifg=NONE          guibg=DarkSlateGray gui=underline
-hi Search       ctermfg=NONE        ctermbg=DarkGray    cterm=underline     term=standout
-hi IncSearch    guifg=Yellow        guibg=Black         gui=reverse
-hi IncSearch    ctermfg=Yellow      ctermbg=Black       cterm=reverse       term=reverse
+hi Search       guifg=NONE          guibg=NONE          gui=underline,reverse
+hi Search       ctermfg=NONE        ctermbg=NONE        cterm=reverse       term=reverse
+hi IncSearch    guifg=Black         guibg=Yellow        gui=NONE
+hi IncSearch    ctermfg=Black       ctermbg=Yellow      cterm=NONE          term=standout,reverse
 hi MatchParen   guifg=NONE          guibg=NONE          gui=reverse
 hi MatchParen   ctermfg=NONE        ctermbg=NONE        cterm=reverse       term=reverse
 
@@ -49,7 +56,7 @@ hi StatusLine   guifg=Green         guibg=Black         gui=reverse,bold
 hi StatusLine   ctermfg=Green       ctermbg=Black       cterm=reverse,bold
 hi StatusLineNC guifg=SlateGray     guibg=Black         gui=reverse,bold
 hi StatusLineNC ctermfg=Gray        ctermbg=Black       cterm=reverse,bold
-hi ColorColumn                      guibg=Gray10
+hi ColorColumn                      guibg=Gray15
 hi ColorColumn                      ctermbg=DarkGray
 hi LineNr       guifg=SlateGray
 hi LineNr       ctermfg=DarkGray
@@ -61,7 +68,9 @@ hi SignColumn   ctermfg=Yellow      ctermbg=DarkGray    cterm=bold          term
 " CursorLineNr uses the same FG color as the BG color for Cursor
 hi CursorLineNr guifg=Yellow                            gui=bold
 hi CursorLineNr ctermfg=Yellow                          cterm=bold
-hi CursorLine                       guibg=Gray5         gui=NONE
+" hi CursorLine                       guibg=NavyBlue      gui=NONE
+" hi CursorLine                       ctermbg=DarkBlue    cterm=NONE
+hi CursorLine                       guibg=Gray10        gui=NONE
 hi CursorLine                       ctermbg=NONE        cterm=NONE
 hi CursorColumn                     guibg=Gray5         gui=NONE
 hi CursorColumn                     ctermbg=NONE        cterm=NONE
@@ -70,9 +79,6 @@ hi Folded       guifg=Green         guibg=DarkSlateGray
 hi Folded       ctermfg=Green       ctermbg=DarkGray
 hi Visual       guibg=Black         guifg=LightGreen    gui=reverse
 hi Visual       ctermbg=Black       ctermfg=LightGreen  cterm=reverse
-
-" The ruler
-" hi User1 guibg=Black ctermbg=Black
 
 " Specials
 hi Special      guifg=Coral                             gui=NONE
@@ -146,11 +152,10 @@ hi WildMenu     guifg=Green         guibg=Black         gui=underline
 hi WildMenu     ctermfg=Green       ctermbg=Black       cterm=underline     term=standout
 
 " Tabs
-" TODO: work on this
 hi TabLine      guifg=LightSlateGray  guibg=Gray20      gui=underline
-hi TabLine      ctermfg=LightGray          ctermbg=DarkGray  cterm=underline     term=underline
+hi TabLine      ctermfg=LightGray     ctermbg=DarkGray  cterm=underline     term=underline
 hi! link TabLineFill  NonText
-hi TabLineSel   guifg=White         guibg=Gray5         gui=bold
+hi TabLineSel   guifg=White         guibg=Gray10        gui=bold
 hi TabLineSel   ctermfg=White       ctermbg=Black       cterm=bold
 
 " Vim
@@ -160,6 +165,7 @@ hi TabLineSel   ctermfg=White       ctermbg=Black       cterm=bold
 " hi! link vimHiTerm       Identifier
 hi! link vimHiCTermColor vimHiGroup
 
-" Custom
-" hi WhitespaceAtEOL ctermbg=DarkGreen guibg=DarkGreen
-" syntax match WhitespaceAtEOL /\s\+$/
+" TODO: define better approximations for 256-color cterm
+" if &t_Co > 255
+" else
+" endif
