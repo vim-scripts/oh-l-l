@@ -1,22 +1,21 @@
 " Vim color scheme
 "
-" Oh-là-là (Oh-la-vache) Vim Color Scheme
-" =======================================
+" Oh-là-là Vim Color Scheme
+" =========================
 "
 " High contrast dark color scheme with black background.
 "
 " Some of the colors used in GUI: LimeGreen, light RoyalBlue, Coral, Tomato,
 " and even DeepPink.
 "
-" Name:    oh-là-là (oh-la-vache)
-" Version: 0.9.3 (2012-07-06)
+" Name:    oh-la-la (oh-là-là)
+" Version: 0.9.4 (2012-07-09)
 " Author:  Alexey Muranov <muranov@math.univ-toulouse.fr>
 
 " This version notes
 " ------------------
-" 1. Use reverse video for Search group.
-" 2. Use Gray15 instead of Gray10 and Gray10 instead of Gray5.
-" 3. Define custom guicursor.
+" 1. Change String cterm color from Yellow to Brown.
+" 2. Rename to Oh-la-la to use only ASCII symbols in the name.
 
 hi clear
 
@@ -26,8 +25,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name="oh-là-là"
-" let g:colors_name="oh-la-vache"
+let g:colors_name="oh-la-la"
 
 " Basic
 hi Normal       guifg=Beige         guibg=Black
@@ -94,7 +92,7 @@ hi Title        ctermfg=White                           cterm=bold
 hi Constant     guifg=Orange
 hi Constant     ctermfg=Yellow
 hi String       guifg=LightGoldenrod
-hi String       ctermfg=Yellow
+hi String       ctermfg=Brown
 hi! link Character String
 hi Number       guifg=Chocolate
 hi Number       ctermfg=Brown
