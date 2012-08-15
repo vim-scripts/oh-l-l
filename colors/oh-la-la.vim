@@ -9,13 +9,13 @@
 " and even DeepPink.
 "
 " Name:    oh-la-la (oh-là-là)
-" Version: 0.9.4 (2012-07-09)
+" Version: 0.9.5 (2012-08-15)
 " Author:  Alexey Muranov <muranov@math.univ-toulouse.fr>
 
 " This version notes
 " ------------------
-" 1. Change String cterm color from Yellow to Brown.
-" 2. Rename to Oh-la-la to use only ASCII symbols in the name.
+" 1. Change Number color to LightSeaGreen.
+" 2. Change diff mode colors.
 
 hi clear
 
@@ -94,8 +94,10 @@ hi Constant     ctermfg=Yellow
 hi String       guifg=LightGoldenrod
 hi String       ctermfg=Brown
 hi! link Character String
-hi Number       guifg=Chocolate
-hi Number       ctermfg=Brown
+" hi Number       guifg=Chocolate
+" hi Number       ctermfg=Brown
+hi Number       guifg=LightSeaGreen
+hi Number       ctermfg=Green
 hi Boolean      guifg=Magenta
 hi Boolean      ctermfg=Magenta
 hi Statement    guifg=LimeGreen                         gui=bold
@@ -130,14 +132,14 @@ hi Directory    guifg=Turquoise                         gui=bold
 hi Directory    ctermfg=Cyan                            cterm=bold          term=bold
 
 " Diff
-hi DiffAdd      guifg=LightGray     guibg=DarkGreen     gui=NONE
-hi DiffAdd      ctermfg=LightGray   ctermbg=DarkGreen   cterm=NONE
-hi DiffChange   guifg=LightGray     guibg=DarkBlue      gui=NONE
-hi DiffChange   ctermfg=LightGray   ctermbg=DarkBlue    cterm=NONE
-hi DiffDelete   guifg=Gray          guibg=DarkRed       gui=NONE
-hi DiffDelete   ctermfg=Gray        ctermbg=DarkRed     cterm=NONE
-hi DiffText     guifg=LightGreen    guibg=DarkMagenta   gui=NONE
-hi DiffText     ctermfg=LightGreen  ctermbg=DarkMagenta cterm=NONE
+hi DiffAdd      guifg=LightGreen      guibg=DarkGreen     gui=NONE
+hi DiffAdd      ctermfg=LightGreen    ctermbg=DarkGreen   cterm=NONE
+hi DiffChange   guifg=LightBlue       guibg=DarkBlue      gui=NONE
+hi DiffChange   ctermfg=LightBlue     ctermbg=DarkBlue    cterm=NONE
+hi DiffDelete   guifg=LightRed        guibg=DarkRed       gui=NONE
+hi DiffDelete   ctermfg=LightRed      ctermbg=DarkRed     cterm=NONE
+hi DiffText     guifg=LightMagenta    guibg=DarkMagenta   gui=NONE
+hi DiffText     ctermfg=LightMagenta  ctermbg=DarkMagenta cterm=NONE
 
 " Pop up menu
 hi! link Pmenu      StatusLineNC
