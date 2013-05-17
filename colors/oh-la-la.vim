@@ -9,13 +9,21 @@
 " and even DeepPink.
 "
 " Name:    oh-la-la (oh-là-là)
-" Version: 0.9.5 (2012-08-15)
+" Version: 0.9.6 (2013-05-17)
 " Author:  Alexey Muranov <muranov@math.univ-toulouse.fr>
 
 " This version notes
 " ------------------
-" 1. Change Number color to LightSeaGreen.
-" 2. Change diff mode colors.
+"
+" Avoid bright white colors.
+"
+" 1. Change Normal    FG color from Beige          to Gainsboro
+" 2. Change Title     FG color from Snow           to Beige
+" 3. Change Error     FG color from White          to Beige
+" 4. Change IncSearch FG color from Black          to DarkRed.
+" 5. Change String    FG color from LightGoldenrod to Wheat
+
+" TODO: try to use Khaki and Snow colors for something.
 
 hi clear
 
@@ -28,7 +36,7 @@ endif
 let g:colors_name="oh-la-la"
 
 " Basic
-hi Normal       guifg=Beige         guibg=Black
+hi Normal       guifg=Gainsboro     guibg=Black
 hi Normal       ctermfg=LightGray   ctermbg=Black
 hi NonText      guifg=SlateGray     guibg=Gray20        gui=NONE
 hi NonText      ctermfg=Gray        ctermbg=DarkGray
@@ -44,8 +52,8 @@ set guicursor=n-c:block-Cursor/lCursor-blinkwait2000-blinkoff500-blinkon1500,v:b
 " Search
 hi Search       guifg=NONE          guibg=NONE          gui=underline,reverse
 hi Search       ctermfg=NONE        ctermbg=NONE        cterm=reverse       term=reverse
-hi IncSearch    guifg=Black         guibg=Yellow        gui=NONE
-hi IncSearch    ctermfg=Black       ctermbg=Yellow      cterm=NONE          term=standout,reverse
+hi IncSearch    guifg=DarkRed       guibg=Yellow        gui=NONE
+hi IncSearch    ctermfg=DarkRed     ctermbg=Yellow      cterm=NONE          term=standout,reverse
 hi MatchParen   guifg=NONE          guibg=NONE          gui=reverse
 hi MatchParen   ctermfg=NONE        ctermbg=NONE        cterm=reverse       term=reverse
 
@@ -87,11 +95,11 @@ hi Todo         guifg=Firebrick     guibg=Green         gui=bold
 hi Todo         ctermfg=DarkRed     ctermbg=Green       cterm=bold
 
 " Syntax
-hi Title        guifg=Snow                              gui=bold
+hi Title        guifg=Beige                              gui=bold
 hi Title        ctermfg=White                           cterm=bold
 hi Constant     guifg=Orange
 hi Constant     ctermfg=Yellow
-hi String       guifg=LightGoldenrod
+hi String       guifg=Wheat
 hi String       ctermfg=Brown
 hi! link Character String
 " hi Number       guifg=Chocolate
@@ -114,8 +122,8 @@ hi Comment      guifg=DarkGray                          gui=italic
 hi Comment      ctermfg=DarkGray                        cterm=NONE
 hi Type         guifg=RoyalBlue1                        gui=bold
 hi Type         ctermfg=Blue                            cterm=bold
-hi Error        guifg=White                             guibg=Red
-hi Error        ctermfg=White                           ctermbg=Red
+hi Error        guifg=Beige                             guibg=Red
+hi Error        ctermfg=LightGray                       ctermbg=Red
 
 " Spelling
 hi SpellBad                                             gui=undercurl       guisp=Red
